@@ -313,6 +313,15 @@ This page contains general settings for Git Extensions.
     The branches matching the pattern will be shown before the others.
     Separate the priorities with ';'.
 
+  .. setting:: Reserved lane for branches
+    :id: sort-reserved-lanes-branches
+
+    This regex defines branch names (and references in general) that get reserved lanes in the revision graph, to help finding them visually.
+	The value ``main[^/]*|master[^/]*`` reserves the first lane for a branch called ``main`` or ``master``,	whenever one exists in the repo.
+	The value ``main[^/]*|master[^/]*;dev[^/]*`` additionally reserves the next lane for a branch called ``dev``/``develop``/``development``, when it exists.
+    You can also add more regexes, separated by ';'.
+	Set to an empty string to disable reserved lanes.
+
 .. settingspage:: Colors
 
   This page contains settings to define the colors used in the application.
